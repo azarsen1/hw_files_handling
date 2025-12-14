@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.azarsen4'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            'com.codeborne:selenide:7.10.0',
+            'org.junit.jupiter:junit-jupiter:5.10.0',
+            'org.slf4j:slf4j-simple:2.0.7'
+    )
+    implementation(
+            "org.apache.commons:commons-lang3:3.18.0",
+            "org.yaml:snakeyaml:2.5"
+    )
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21) // фиксируем Java 21
+    }
+}
+
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs << "-Xlint:deprecation"
+}
