@@ -37,3 +37,5 @@ target/
 build.gradle.kts
 settings.gradle.kts
 src/main/
+.DS_Store
+**/. DS_Store
