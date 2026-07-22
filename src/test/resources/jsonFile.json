@@ -1,0 +1,11 @@
+{
+  "userId": 12345,
+  "userName": "Виолетта",
+  "isActive": true,
+  "roles": ["admin", "editor"],
+  "address": {
+    "city": "Ташкент",
+    "zipCode": "100000"
+  },
+  "lastLogin": null
+}
